@@ -1,4 +1,4 @@
-namespace HomeAPI
+namespace HomeAPI.Models
 {
     public class WeatherForecast
     {

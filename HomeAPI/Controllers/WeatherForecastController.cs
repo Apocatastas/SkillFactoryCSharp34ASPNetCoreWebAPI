@@ -1,3 +1,4 @@
+using HomeAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HomeAPI.Controllers
