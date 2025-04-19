@@ -1,3 +1,4 @@
+using HomeApi.Configuration;
 using Microsoft.OpenApi.Models;
 
 namespace HomeAPI
@@ -9,10 +10,15 @@ namespace HomeAPI
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration{ get; } = new ConfigurationBuilder()
+            .AddJsonFile("HomeOptions.json")
+            .AddJsonFile("appsettings.json")
+            .AddJsonFile("appsettings.Development.json")
+            .Build();
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<HomeOptions>(Configuration);
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
