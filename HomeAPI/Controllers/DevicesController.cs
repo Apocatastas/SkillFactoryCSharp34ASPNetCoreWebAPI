@@ -1,5 +1,9 @@
-﻿using HomeAPI.Models;
+﻿using AutoMapper;
+using HomeApi.Configuration;
+using HomeAPI.Contracts.Devices;
+using HomeAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace HomeAPI.Controllers
 {
@@ -7,20 +11,30 @@ namespace HomeAPI.Controllers
     [Route("[controller]")]
     public class DevicesController : ControllerBase
     {
-        private readonly ILogger<DevicesController> _logger;
+        private IOptions<HomeOptions> _options;
+        private IMapper _mapper;
 
-        public DevicesController(ILogger<DevicesController> logger)
+        public DevicesController(IOptions<HomeOptions> options, IMapper mapper)
         {
-            _logger = logger;
+            _options = options;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        [HttpHead]
-        [Route("{manufacturer}")]
-        public IActionResult GetManual([FromRoute] string manufacturer) 
+        [Route("")]
+        public IActionResult Get()
         {
-            return StatusCode(200/*, $"Server name: {_options.Value.ServerName}"*/);
+            return StatusCode(200, "Устройства отсутствуют");
         }
 
+        [HttpPost]
+        [Route("Add")]
+        public IActionResult Add(
+                                    [FromBody] 
+                                    AddDeviceRequest request 
+                                )
+        {
+            return StatusCode(200, $"Устройство {request.Name} добавлено!");
+        }
     }
 }
