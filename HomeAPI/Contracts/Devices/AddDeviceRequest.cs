@@ -14,7 +14,6 @@ namespace HomeAPI.Contracts.Devices
         public string SerialNumber { get; set; }
 
         [Required]
-        [Range(120, 220, ErrorMessage = "Поддерживаются устройства с напряжением от {1} до {2} вольт")]
         public int CurrentVolts { get; set; }
         [Required]
         public bool GasUsage { get; set; }

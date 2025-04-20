@@ -34,6 +34,12 @@ namespace HomeAPI.Controllers
                                     AddDeviceRequest request 
                                 )
         {
+            if (request.CurrentVolts < 120)
+            {
+                ModelState.AddModelError("currentVolts", "Устройства с напряжением меньше 120 вольт не поддерживаются!");
+                return BadRequest(ModelState);
+            }
+
             return StatusCode(200, $"Устройство {request.Name} добавлено!");
         }
     }
