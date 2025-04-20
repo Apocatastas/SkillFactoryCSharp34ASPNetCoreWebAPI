@@ -1,7 +1,10 @@
+using FluentValidation.AspNetCore;
 using HomeApi.Configuration;
 using HomeAPI;
+using HomeAPI.Contracts.Validation;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
+using FluentValidation;
 
 public class Startup
 {
@@ -20,6 +23,8 @@ public class Startup
         services.AddAutoMapper(assembly);
 
         services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo { Title = "HomeApi", Version = "v1" }); });
+        services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<AddDeviceRequestValidator>());
+
 
     }
 
