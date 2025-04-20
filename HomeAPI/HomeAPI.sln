@@ -5,6 +5,8 @@ VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeAPI", "HomeAPI.csproj", "{2BDFDD89-45A1-A0A7-17AB-D2B1A25BE66E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeAPI.Contracts", "..\HomeAPI.Contracts\HomeAPI.Contracts.csproj", "{D618E425-A09C-4701-91DE-91474C65124F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2BDFDD89-45A1-A0A7-17AB-D2B1A25BE66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BDFDD89-45A1-A0A7-17AB-D2B1A25BE66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BDFDD89-45A1-A0A7-17AB-D2B1A25BE66E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D618E425-A09C-4701-91DE-91474C65124F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D618E425-A09C-4701-91DE-91474C65124F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D618E425-A09C-4701-91DE-91474C65124F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D618E425-A09C-4701-91DE-91474C65124F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
